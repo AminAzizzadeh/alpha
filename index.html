@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Message</title>
+    <title>Password Check</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </head>
 <body>
-    <h1>Secret Message</h1>
-    <p>Enter the secret word (not recommended for sensitive data):</p>
-    <input type="text" id="secretInput" placeholder="Enter word here">
-    <button onclick="checkSecret()">Check</button>
-    <p id="message"></p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="result"></p>
 
-    <script src="script.js"></script>
+    <script>
+        // This is a hashed version of the password "myPassword"
+        var hashedPassword = "9bdd180d4b926f9bbc4ef95a6fe7c995";
+
+        function checkPassword() {
+            var input = document.getElementById('passwordInput').value;
+            var hashedInput = CryptoJS.MD5(input).toString();
+
+            if (hashedInput === hashedPassword) {
+                // This is a hashed version of the string "myString"
+                var hashedString = "dXd1";
+                document.getElementById('result').innerText = "The string is: " + hashedString;
+            } else {
+                document.getElementById('result').innerText = "Incorrect password.";
+            }
+        }
+    </script>
 </body>
 </html>
