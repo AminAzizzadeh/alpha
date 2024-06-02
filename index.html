@@ -9,6 +9,8 @@
     <button onclick="checkPassword()">Submit</button>
     <p id="result"></p>
 
+    <audio src="Audio/AlphaPW1.mp3"></audio>
+
     <script>
         // This is a hashed version of the password "myPassword"
         var hashedPassword = "9bdd180d4b926f9bbc4ef95a6fe7c995";
@@ -19,7 +21,7 @@
 
             if (hashedInput === hashedPassword) {
                 // This is a hashed version of the string "myString"
-                var hashedString = "dXd1";
+                var hashedString = "V2hlbGwgRG9uZSEKVGhlIEZpbmFsIEtleToK2YXZjtmG2ZIg2KrZjtmC2Y7Yr9mR2Y7ZhdmOINi52Y7ZhNuMINmC2Y7ZiNmF2Y0g2YXZkNmG2Y4g2KfZhNmS2YXZj9iz2ZLZhNmQ2YXbjNmG2Y4g2YjZjiDZh9mP2YjZjiDbjNmO2LHbjCDYo9mO2YbZkdmOINmB24zZh9mQ2YXZkiDZhdmO2YYg2YfZiCDYp9mB2LbZhNmPINmF2YbZhyDZgdmC2K8g2K7Yp9mG2Y4g2KfZhNmE2ZHZjtmH4oCPINmIINix2LPZiNmE2Y7ZhyDZiCDYp9mE2YXZj9iz2YTZhduM2ZDZhgrYp9mE2LrYr9uM2LHYjCDYrCDbuNiMINi127LbuduxClNlbmQgTWUgVGhhdCBXaGVuIHlvdSBmb3VuZCBpdC4KSG9wZSB0byBzZWUgeW91IHNvb24u";
                 document.getElementById('result').innerText = "The string is: " + hashedString;
             } else {
                 document.getElementById('result').innerText = "Incorrect password.";
